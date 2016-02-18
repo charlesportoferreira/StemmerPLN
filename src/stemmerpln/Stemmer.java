@@ -628,11 +628,12 @@ class Stemmer {
      * file-name ...
      */
     public static void main(String[] args) {
+        System.out.println("Teste");
         char[] w = new char[501];
         Stemmer s = new Stemmer();
-        for (int i = 0; i < args.length; i++) {
+        //for (int i = 0; i < args.length; i++) {
             try {
-                FileInputStream in = new FileInputStream(args[i]);
+                FileInputStream in = new FileInputStream(new File("textos.txt"));
 
                 try {
                     while (true) {
@@ -672,16 +673,17 @@ class Stemmer {
                         if (ch < 0) {
                             break;
                         }
+                        //System.out.println("Teste2");
                         System.out.print((char) ch);
                     }
                 } catch (IOException e) {
-                    System.out.println("error reading " + args[i]);
-                    break;
+                   // System.out.println("error reading " + args[i]);
+                    //break;
                 }
             } catch (FileNotFoundException e) {
-                System.out.println("file " + args[i] + " not found");
-                break;
+                //System.out.println("file " + args[i] + " not found");
+                //break;
             }
-        }
+        //}
     }
 }
